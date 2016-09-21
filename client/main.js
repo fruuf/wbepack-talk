@@ -1,5 +1,15 @@
 import React from 'react';
+import RegisterForm from 'RegisterForm';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import injectTapEventPlugin from 'react-tap-event-plugin';
+
+if(!window.injectTapEventPluginHasRun) {
+  window.injectTapEventPluginHasRun = true;
+  injectTapEventPlugin();
+}
 
 export default () => (
-  <h1>Me to, but with react!</h1>
+  <MuiThemeProvider>
+    <RegisterForm />
+  </MuiThemeProvider>
 )
