@@ -1,0 +1,18 @@
+{
+  "name": "webpack-examples",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "server": "http-server server -p 3000",
+    "client": "rimraf server/assets && pack -r --proxy 3000 -a assets -s client -w"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "http-server": "^0.9.0",
+    "pack-cli": "^0.2.1",
+    "react": "^15.3.2",
+    "rimraf": "^2.5.4"
+  }
+}
