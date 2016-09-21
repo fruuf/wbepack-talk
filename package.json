@@ -1,0 +1,12 @@
+{
+  "name": "1-proxy-and-minification",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "server": "http-server server -p 3000",
+    "client": "pack -r --proxy 3000 -a assets -s client -w" 
+  },
+  "author": "",
+  "license": "ISC"
+}
