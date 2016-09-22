@@ -1,11 +1,11 @@
 {
-  "name": "1-proxy-and-minification",
+  "name": "webpack-examples",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "server": "http-server server -p 3000",
-    "client": "rimraf server/assets && pack -r --proxy 3000 -a assets -s client -w",
+    "client": "pack -r --proxy 3000 -a assets -s client -w",
     "build": "rimraf server/assets && pack -r -a assets -s client -o server/assets"
   },
   "author": "",
