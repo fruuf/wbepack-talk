@@ -11,9 +11,12 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "classnames": "^2.2.5",
     "http-server": "^0.9.0",
+    "lodash": "^4.16.1",
     "pack-cli": "^0.2.1",
     "react": "^15.3.2",
-    "rimraf": "^2.5.4"
+    "rimraf": "^2.5.4",
+    "rxjs": "^5.0.0-beta.12"
   }
 }

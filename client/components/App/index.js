@@ -1,32 +1,14 @@
-import React, { Component } from 'react'
-import './app-styles.scss';
-import thumbsUpImage from './thumbs-up.svg';
+import { connectComponent, defineEvent } from '/util/rx-react';
+import 'rxjs';
+import AppComponent from './AppComponent';
 
-class App extends Component {
-  constructor() {
-    super();
-    this.state = { count: 0 };
-    this.onClick = this.onClick.bind(this);
-  }
+const createState = (propsStream, actionStream, listen) => {
+  const onSelectPlayerStream = defineEvent(actionStream, 'selectPlayer');
 
-  onClick(e) {
-    e.preventDefault();
-    this.setState({count: this.state.count + 1});
-  }
+  const selectedPlayerIdStream = onSelectPlayerStream
+    .startWith(0);
 
-  render() {
-    return (
-      <div className="app">
-        <div className="background">
-          <div className="button" onClick={this.onClick}>
-            <img src={thumbsUpImage} />
-            Sounds good ({this.state.count})
-          </div>
-        </div>
+  listen('selectedPlayerId', selectedPlayerIdStream);
+};
 
-      </div>
-    );
-  }
-}
-
-export default App;
+export default connectComponent(AppComponent, createState);

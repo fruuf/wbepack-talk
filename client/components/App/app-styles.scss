@@ -1,32 +1,23 @@
 @import '/variables.scss';
 
-.app {
-  display: block;
-  margin: 0 0 30px 0;
-  .background {
-    background-image: url('./what-is-webpack.png');
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center center;
-    position: relative;
-    height: 300px;
-    .button {
-      position: absolute;
-      right: 0;
-      bottom: 0;
-      line-height: 30px;
-      background-color: $primary-color;
-      color: #000;
-      height: 50px;
-      padding: 10px 20px;
-      cursor: pointer;
-      img {
-        height: 30px;
-        width: 30px;
-        fill: white;
-        margin-right: 1em;
-      }
-    }
-  }
-
+.squad-player {
+  width: 100%;
+  height: 50px;
+  text-align: center;
+  background: $secondary;
+  margin: 10px 0;
+  line-height: 50px;
+  cursor: pointer;
+}
+.content {
+  display: flex;
+  flex-flow: row nowrap;
+  overflow: hidden;
+}
+.squad, .sidebar {
+  flex: 1 1 0;
+  overflow-y: auto;
+}
+.highlight {
+  background-color: $active;
 }
