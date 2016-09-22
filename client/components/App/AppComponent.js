@@ -18,14 +18,15 @@ const AppComponent = props => (
             ])}
             onClick={() => props.dispatch('selectPlayer', player.id)}
           >
-            { player.name }
+            <div className="name">{ player.name }</div>
+            { props.selectedPlayerId === player.id && (
+              <Player playerId={player.id} />
+            ) || null}
           </div>
         ))}
       </div>
       <div className="sidebar">
-        { props.selectedPlayerId && (
-          <Player playerId={props.selectedPlayerId} />
-        ) || null}
+        I get used for something else now
       </div>
     </div>
     <div className="footer">
