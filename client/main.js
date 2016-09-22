@@ -1,3 +1,3 @@
-import '/global.scss';
+import '/global.scss?global';
 
 export { default } from 'App';

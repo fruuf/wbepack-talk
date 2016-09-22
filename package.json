@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "server": "http-server server -p 3000",
-    "client": "pack -r --proxy 3000 -a assets -s client -w",
-    "build": "rimraf server/assets && pack -r -a assets -s client -o server/assets"
+    "client": "pack -r -m --proxy 3000 -a assets -s client -w",
+    "build": "rimraf server/assets && pack -r -m -a assets -s client -o server/assets"
   },
   "author": "",
   "license": "ISC",

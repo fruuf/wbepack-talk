@@ -1,35 +1,40 @@
 import React, { PropTypes } from 'react';
-import classnames from 'classnames';
+import classnames from 'classnames/bind';
 import { players } from '/players';
 import Player from 'Player';
 
-import './app-styles.scss';
+import styles from './app-styles.scss';
+const classes = classnames.bind(styles);
 
+// className="(.+)"
+// className={classes(['$1'])}
 const AppComponent = props => (
   <div className="app">
-    <div className="content">
-      <div className="squad">
+    <div className={classes(['content'])}>
+      <div className={classes(['squad'])}>
         { players.map(player => (
           <div
             key={player.id}
-            className={classnames([
+            className={classes([
               'squad-player',
               player.id === props.selectedPlayerId && 'highlight',
             ])}
             onClick={() => props.dispatch('selectPlayer', player.id)}
           >
-            <div className="name">{ player.name }</div>
+            <div className={classes(['name'])}>{ player.name }</div>
             { props.selectedPlayerId === player.id && (
               <Player playerId={player.id} />
             ) || null}
           </div>
         ))}
       </div>
-      <div className="sidebar">
-        I get used for something else now
+      <div className={classes(['sidebar'])}>
+        <pre>
+          { JSON.stringify(styles, null, 2)}
+        </pre>
       </div>
     </div>
-    <div className="footer">
+    <div className={classes(['footer'])}>
       I do footer stuff
     </div>
   </div>
